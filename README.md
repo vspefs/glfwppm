@@ -1,6 +1,8 @@
-# GLFW C++ wrapper - glfwpp ![logo](logo.png)
+# Modularized GLFW C++ wrapper - glfwppm ![logo](logo.png)
 
-There's no README for glfwppm yet. Please check back later. However, you can check [the original glfwpp](https://github.com/vspefs/glfwppm) README below. (Also the logo isn't updated yet.)
+This project, glfwppm, does not currently have a dedicated README. This is because glfwppm is simply a converter of the original GLFW C++ wrapper project [glfwpp](https://github.com/janekb04/glfwpp) to C++20 named modules. It does not introduce any additional functionality or changes beyond this conversion.
+
+However, do check [the original glfwpp project](https://github.com/janekb04/glfwpp). The beginning part of its README goes below.
 
 > GLFWPP or (GLFW C++ Wrapper) is a thin, modern C++17 layer on top of [GLFW](https://www.glfw.org/). It supports GLFW versions from 3.2 up to the current 3.3.6. From [the official GLFW website](https://www.glfw.org/):
 >
