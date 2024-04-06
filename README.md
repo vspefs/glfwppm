@@ -12,4 +12,12 @@ However, do check [the original glfwpp project](https://github.com/janekb04/glfw
 >
 > I like C++ and OOP, so when I find a C library, I immediately look for a wrapper which offers RAII objects instead of free `create` and `destroy` functions, identifiers wrapped in `namespace`s, methods instead of free functions, scoped `enum`s instead of macros and exceptions instead of error codes. In case of GLFW I didn't really find such a library, so I made one myself.
 
+## Notice
+
+- This project is a work in progress. It is not yet ready for use. The original glfwpp project is already usable, so you can check it out.
+
+- Now this project supports only MSVC and requires GLFW as static library due to my limited knowledge and laziness. I will add support for other compilers and dynamic linking in the future once I know more about xmake.
+
+- The original glfwpp project is licensed under the MIT license. This project is also licensed under the MIT license.
+
 <hr>
