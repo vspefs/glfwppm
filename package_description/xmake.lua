@@ -79,5 +79,39 @@ package("glfwppm")
 
     on_install(function(package)
     {
-        import("package.tools.xmake").install(package, {})
+        local configs = {}
+        if package.config("native_win32") then
+            table.insert(configs, "--native_win32=true")
+        end
+        if package.config("native_cocoa") then
+            table.insert(configs, "--native_cocoa=true")
+        end
+        if package.config("native_x11") then
+            table.insert(configs, "--native_x11=true")
+        end
+        if package.config("native_wayland") then
+            table.insert(configs, "--native_wayland=true")
+        end
+        if package.config("native_wgl") then
+            table.insert(configs, "--native_wgl=true")
+        end
+        if package.config("native_nsgl") then
+            table.insert(configs, "--native_nsgl=true")
+        end
+        if package.config("native_glx") then
+            table.insert(configs, "--native_glx=true")
+        end
+        if package.config("native_egl") then
+            table.insert(configs, "--native_egl=true")
+        end
+        if package.config("native_osmesa") then
+            table.insert(configs, "--native_osmesa=true")
+        end
+        if package.config("vulkan-hpp") and package.config("vulkan") then
+            table.insert(configs, "--vulkan_hpp=true")
+        else if package.config("vulkan")  then
+            table.insert(configs, "--vulkan=true")
+        end
+        
+        import("package.tools.xmake").install(package, configs)
     })
