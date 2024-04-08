@@ -159,7 +159,7 @@ export namespace glfw
         return extensionNames;
     }
     using VkProc = GLFWvkproc;
-#if defined(VK_VERSION_1_0)
+#ifdef VK_VERSION_1_0
     [[nodiscard]] inline VkProc getInstanceProcAddress(VkInstance instance, const char* procName)
     {
         return glfwGetInstanceProcAddress(instance, procName);

@@ -1065,7 +1065,7 @@ export namespace glfw
             glfwSetCursor(_handle, static_cast<GLFWcursor*>(cursor_));
         }
 
-#if defined(VK_VERSION_1_0)
+#ifdef VK_VERSION_1_0
         [[nodiscard]] VkResult createSurface(
                 VkInstance instance,
                 const VkAllocationCallbacks* allocator,

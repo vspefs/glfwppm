@@ -9,7 +9,7 @@ export namespace glfw
 {
     namespace native
     {
-#if defined(GLFW_EXPOSE_NATIVE_WIN32)
+#ifdef GLFW_EXPOSE_NATIVE_WIN32
         [[nodiscard]] inline const char* getWin32Adapter(const glfw::Monitor& monitor_)
         {
             return glfwGetWin32Adapter(static_cast<GLFWmonitor*>(monitor_));
@@ -24,14 +24,14 @@ export namespace glfw
         }
 #endif
 
-#if defined(GLFW_EXPOSE_NATIVE_WGL)
+#ifdef GLFW_EXPOSE_NATIVE_WGL
         [[nodiscard]] inline ::HGLRC getWGLContext(glfw::Window& window_)
         {
             return glfwGetWGLContext(static_cast<GLFWwindow*>(window_));
         }
 #endif
 
-#if defined(GLFW_EXPOSE_NATIVE_COCOA)
+#ifdef GLFW_EXPOSE_NATIVE_COCOA
         [[nodiscard]] inline ::CGDirectDisplayID getCocoaMonitor(const glfw::Monitor& monitor_)
         {
             return glfwGetCocoaMonitor(static_cast<GLFWmonitor*>(monitor_));
@@ -42,14 +42,14 @@ export namespace glfw
         }
 #endif
 
-#if defined(GLFW_EXPOSE_NATIVE_NSGL)
+#ifdef GLFW_EXPOSE_NATIVE_NSGL
         [[nodiscard]] inline ::id getNSGLContext(glfw::Window& window_)
         {
             return glfwGetNSGLContext(static_cast<GLFWwindow*>(window_));
         }
 #endif
 
-#if defined(GLFW_EXPOSE_NATIVE_X11)
+#ifdef GLFW_EXPOSE_NATIVE_X11
         [[nodiscard]] inline ::Display* getX11Display()
         {
             return glfwGetX11Display();
@@ -76,7 +76,7 @@ export namespace glfw
         }
 #endif
 
-#if defined(GLFW_EXPOSE_NATIVE_GLX)
+#ifdef GLFW_EXPOSE_NATIVE_GLX
         [[nodiscard]] inline ::GLXContext getGLXContext(glfw::Window& window_)
         {
             return glfwGetGLXContext(static_cast<GLFWwindow*>(window_));
@@ -87,7 +87,7 @@ export namespace glfw
         }
 #endif
 
-#if defined(GLFW_EXPOSE_NATIVE_WAYLAND)
+#ifdef GLFW_EXPOSE_NATIVE_WAYLAND
         [[nodiscard]] inline ::wl_display* getWaylandDisplay()
         {
             return glfwGetWaylandDisplay();
@@ -102,7 +102,7 @@ export namespace glfw
         }
 #endif
 
-#if defined(GLFW_EXPOSE_NATIVE_EGL)
+#ifdef GLFW_EXPOSE_NATIVE_EGL
         [[nodiscard]] inline ::EGLDisplay getEGLDisplay()
         {
             return glfwGetEGLDisplay();
@@ -117,7 +117,7 @@ export namespace glfw
         }
 #endif
 
-#if defined(GLFW_EXPOSE_NATIVE_OSMESA)
+#ifdef GLFW_EXPOSE_NATIVE_OSMESA
         [[nodiscard]] inline std::tuple<int, int, int, void*> getOSMesaColorBuffer(glfw::Window& window_)
         {
             int width, height, format;
