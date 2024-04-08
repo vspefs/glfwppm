@@ -5,7 +5,7 @@ package("glfwppm")
 
     set_urls("https://github.com/vspefs/glfwppm.git")
 
-    add_configs("glfw_dll_windows", { description = "Choose when using the GLFW DLL on Windows", default = false, type = "boolean" })})
+    add_configs("glfw_dll_windows", { description = "Choose when using the GLFW DLL on Windows", default = false, type = "boolean" })
     add_configs("glfw_x11", { description = "Build GLFW support for X11", default = false, type = "boolean" })
     add_configs("glfw_wayland", { description = "Build GLFW support for Wayland", default = false, type = "boolean" })
     add_configs("vulkan", { description = "Build with Vulkan support", default = false, type = "boolean" })
