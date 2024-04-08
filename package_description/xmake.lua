@@ -9,7 +9,7 @@ package("glfwppm")
     add_configs("glfw_x11", { description = "Build GLFW support for X11", default = false, type = "boolean" })
     add_configs("glfw_wayland", { description = "Build GLFW support for Wayland", default = false, type = "boolean" })
     add_configs("vulkan", { description = "Build with Vulkan support", default = false, type = "boolean" })
-    add_configs("vulkan-hpp", { description = "Build with Vulkan-Hpp support", default = false, type = "boolean" })
+    add_configs("vulkan_hpp", { description = "Build with vulkan_hpp support", default = false, type = "boolean" })
     add_configs("native_win32", { description = "Build GLFW support for native Win32", default = false, type = "boolean" })
     add_configs("native_cocoa", { description = "Build GLFW support for native Cocoa", default = false, type = "boolean" })
     add_configs("native_x11", { description = "Build GLFW support for native X11", default = false, type = "boolean" })
@@ -60,7 +60,7 @@ package("glfwppm")
         if package.config("native_osmesa") then
             table.insert(glfw.defines, "GLFW_EXPOSE_NATIVE_OSMESA")
         end
-        if package.config("vulkan-hpp") and package.config("vulkan") then
+        if package.config("vulkan_hpp") and package.config("vulkan") then
             table.insert(glfw.defines, "VK_VERSION_1_0")
         else if package.config("vulkan")  then
             table.insert(glfw.defines, "VK_VERSION_1_0")
@@ -107,7 +107,7 @@ package("glfwppm")
         if package.config("native_osmesa") then
             table.insert(configs, "--native_osmesa=true")
         end
-        if package.config("vulkan-hpp") and package.config("vulkan") then
+        if package.config("vulkan_hpp") and package.config("vulkan") then
             table.insert(configs, "--vulkan_hpp=true")
         else if package.config("vulkan")  then
             table.insert(configs, "--vulkan=true")
